@@ -1,8 +1,14 @@
+// instead of writing out items() in our Query
+// we can use forwardTo() to defer method in prisma.graphql
+const { forwardTo } = require('prisma-binding');
+
 const Query = {
-  async items(parent, args, ctx, info) {
-    const item = await ctx.db.query.item();
-    return item;
-  }
+  items: forwardTo('db')
+  // async items(parent, args, ctx, info) {
+  //   console.log('getting items');
+  //   const item = await ctx.db.query.items();
+  //   return item;
+  // }
 };
 
 module.exports = Query;
