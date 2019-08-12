@@ -22,10 +22,15 @@ const Logo = styled.h1`
   transform: skew(-7deg);
   a {
     padding: 0.5rem 1rem;
-    background: ${props => props.theme.purple};
-    color: ${props => props.theme.logoGreen};
+    /* background: ${props => props.theme.purple}; */
+    /* color: ${props => props.theme.logoGreen}; */
     text-decoration: none;
     text-transform: uppercase;
+    background: #11998e;  /* fallback for old browsers */
+    background: linear-gradient(to right, #38ef7d, #11998e);
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
   @media (max-width: ${props => props.theme.maxWidth}) {
     margin: 0;
@@ -39,7 +44,7 @@ const HeaderStyles = styled.header`
     display: grid;
     grid-template-columns: auto 1fr;
     justify-content: space-between;
-    align-items: stretch; 
+    align-items: stretch;
     @media (max-width: ${props => props.theme.maxWidth}) {
       grid-template-columns: 1fr;
       justify-content: center;

@@ -11,7 +11,7 @@ const theme = {
   offWhite: '#hsla(257, 21%, 94%, 1.00)',
   maxWidth: '1200px',
   purple: 'hsl(296, 89%, 25%)',
-  accent: 'hsl(296, 89%, 25%)',
+  accent: '#38ef7d',
   logoGreen: 'HSLA(135, 100%, 47%, 1.00)',
   bs: '0 12px 24px 0 rbga(0, 0, 0, 0.09)'
 }

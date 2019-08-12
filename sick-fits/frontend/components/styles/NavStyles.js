@@ -17,6 +17,11 @@ const NavStyles = styled.ul`
     font-size: 1em;
     background: none;
     border: 0;
+    background: #11998e;  /* fallback for old browsers */
+    background: linear-gradient(to right, #38ef7d, #11998e);
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     cursor: pointer;
     @media (max-width: 700px) {
       font-size: 10px;
@@ -43,7 +48,7 @@ const NavStyles = styled.ul`
       transition: width 0.4s;
       transition-timing-function: cubic-bezier(1, -0.65, 0, 2.31);
       left: 50%;
-      margin-top: 2rem;
+      margin-top: 40px;
     }
     &:hover,
     &:focus {
