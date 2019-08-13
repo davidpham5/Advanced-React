@@ -8,16 +8,17 @@ const theme = {
   black: '#393939',
   grey: '#3a3a3a',
   lightGrey: '#e1e1e1',
-  offWhite: '#hsla(257, 21%, 94%, 1.00)',
+  offWhite: '#F9FCFE',
+  white: '#fff',
   maxWidth: '1200px',
   purple: 'hsl(296, 89%, 25%)',
   accent: '#38ef7d',
   logoGreen: 'HSLA(135, 100%, 47%, 1.00)',
-  bs: '0 12px 24px 0 rbga(0, 0, 0, 0.09)'
+  bs: '0 12px 24px 0 rgba(0, 0, 0, 0.09)'
 }
 
 const LayoutStyles = styled.div`
-  background: ${props => props.theme.offWhite};
+  background: ${props => props.theme.white};
   color: ${props => props.theme.black};
 `;
 
@@ -25,7 +26,6 @@ const ContainerStyles = styled.div`
   max-width: ${props => props.theme.maxWidth};
   margin: 0 auto;
   padding: 2rem;
-  box-shadow: ${props => props.theme.bs};
 `;
 
 injectGlobal`

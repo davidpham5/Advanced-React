@@ -1,9 +1,9 @@
 import Link from 'next/link'
-
+import Items from './items'
 const Home = props => {
   return (
     <div>
-      <p>Home</p>
+      <Items />
     </div>
   )
 }

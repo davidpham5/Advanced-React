@@ -17,11 +17,12 @@ const NavStyles = styled.ul`
     font-size: 1em;
     background: none;
     border: 0;
-    background: #11998e;  /* fallback for old browsers */
-    background: linear-gradient(to right, #38ef7d, #11998e);
+    color: #38ef7d;
+    // background: #38ef7d;  /* fallback for old browsers */
+    /* background: linear-gradient(to right, #38ef7d, #11998e);
 
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent; */
     cursor: pointer;
     @media (max-width: 700px) {
       font-size: 10px;
