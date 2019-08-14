@@ -17,8 +17,8 @@ const ALL_ITEMS_QUERY = gql`
   }
 `;
 const ContentContainer = styled.div`
-  /* display: flex;
-  justify-content: center; */
+  max-width: ${props => props.theme.maxWidth};
+  margin: 0 auto;
 `
 
 const ItemsList = styled.div`
