@@ -62,7 +62,7 @@ const Header = props => (
     <div className='bar'>
       <Logo>
         <Link href='/'>
-          <a>dpham-5</a>
+          <a>Hack the Planet</a>
         </Link>
       </Logo>
       <Nav />

@@ -1,5 +1,5 @@
-# source: https://us1.prisma.sh/david-2ed500/dpham5/dev
-# timestamp: Fri Jun 28 2019 11:55:27 GMT-0400 (Eastern Daylight Time)
+# source: https://us1.prisma.sh/davidpham5/dpham5/dev
+# timestamp: Tue Aug 13 2019 22:45:44 GMT-0400 (Eastern Daylight Time)
 
 type AggregateItem {
   count: Int!
@@ -717,5 +717,4 @@ input UserWhereInput {
 
 input UserWhereUniqueInput {
   id: ID
-  email: String
 }
