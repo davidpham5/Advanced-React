@@ -5,8 +5,10 @@ import Router from 'next/router';
 import Form from "./styles/Form";
 import formatMoney from "../lib/formatMoney";
 import Error from './ErrorMessage';
+import ImagePreview from './styles/ImagePreview';
 
 const CREATE_ITEM_MUTATION = gql`
+
   mutation CREATE_ITEM_MUTATION(
     $title: String!
     $description: String!
@@ -43,8 +45,10 @@ class CreateItem extends Component {
 
   handleSubmit = async (e, createItem) => {
     e.preventDefault();
+    const { image, largerImage } = this.state;
+
     const resp = await createItem();
-    console.log(resp)
+
     // go to detail view for item created
     Router.push({
       pathname: '/item/',
@@ -70,7 +74,7 @@ class CreateItem extends Component {
     })
 
     const file = await resp.json();
-    console.log(file)
+
     this.setState({ image: file.secure_url, largeImage: file.eager[0].secure_url })
   }
 
@@ -106,7 +110,11 @@ class CreateItem extends Component {
                 required
               />
             </label>
-
+            {image && (
+              <ImagePreview>
+                <img src={image} alt=""/>
+              </ImagePreview>
+            )}
             <label htmlFor="price">
               Price
               <input
@@ -135,6 +143,7 @@ class CreateItem extends Component {
           </fieldset>
         </Form>
         )}
+        
       </Mutation>
     );
   }

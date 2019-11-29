@@ -29,13 +29,17 @@ const Mutations = {
     console.log(user);
 
     return user;
+  },
+  updateItem(parent, args, ctx, info) {
+    const update = { ...args };
+    // remove id from updates
+    delete update.id;
+    // run the update method
+    return ctx.db.mutation.updateItem({
+      data: update,
+      where: { id: args.id }
+    }, info);
   }
-  // createDog (parent, args, ctx, info) {
-  //   global.dogs = global.dogs || [];
-  //   const newDog = { name: args.name };
-  //   global.dogs.push(newDog);
-  //   console.log(args);
-  // }
 };
 
 module.exports = Mutations;

@@ -1,16 +1,16 @@
 import styled from 'styled-components';
-import CreateItem from '../components/CreateItem';
+import UpdateItem from '../components/UpdateItem';
 
 const ContainerStyles = styled.div`
   max-width: 460px;
   margin: 0 auto;
 `;
-const Sell = props => {
+const Update = ({ query }) => {
   return (
     <ContainerStyles>
-      <CreateItem />
+      <UpdateItem id={query.id} />
     </ContainerStyles>
   )
 }
 
-export default Sell
+export default Update
