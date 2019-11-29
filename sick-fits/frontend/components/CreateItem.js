@@ -54,20 +54,24 @@ class CreateItem extends Component {
 
    uploadFile = async (e) => {
     console.log('upload file')
-    const { files } = e.target;
+    const files = e.target.files;
     const data = new FormData();
     data.append('file', files[0]);
-    data.append('upload_preset', 'dpham5');
+    /**
+     * @method: data.append()
+     * @param: upload_preset | cloundinary expects a preset type
+     * @param: preset name | name of preset in cloundinary
+    **/
+    data.append('upload_preset', 'larger_preset');
 
-    const resp = await fetch('https://api.cloudinary.com/v1_1/dpham5/image/upload/', {
+    const resp = await fetch('https://api.cloudinary.com/v1_1/dpham5/image/upload', {
       method: 'POST',
       body: data
     })
 
     const file = await resp.json();
     console.log(file)
-    // https://cloudinary.com/documentation/javascript_integration#overview
-    // this.setState({ image: file.secure.url, largeImage: file.eager[0].secure.url })
+    this.setState({ image: file.secure_url, largeImage: file.eager[0].secure_url })
   }
 
   render() {
@@ -90,6 +94,7 @@ class CreateItem extends Component {
                 required
               />
             </label>
+
             <label htmlFor="fileUpload">
               Image
               <input
@@ -101,6 +106,7 @@ class CreateItem extends Component {
                 required
               />
             </label>
+
             <label htmlFor="price">
               Price
               <input
