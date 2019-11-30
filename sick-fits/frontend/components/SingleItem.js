@@ -12,9 +12,10 @@ import styled from "styled-components";
 import Head from 'next/head';
 
 const ContainerStyles = styled.div`
-  max-width: 640px;
-  margin: 0 auto;
-  padding: 2rem;
+ display: grid;
+grid-template-columns: 600px 1fr;
+grid-gap: 30px;
+max-width: 1080px;
 `;
 
 const SINGLE_ITEM_QUERY = gql`
@@ -53,7 +54,10 @@ class SingleItem extends Component {
                 {item.largeImage && (
                   <img src={item.largeImage} alt={item.title} />
                 )}
-                <Title>
+              </ItemStyles>
+              
+              <div>
+              <Title>
                   <a href="">{item.title}</a>
                 </Title>
                 <PriceTag>{formatMoney(item.price)}</PriceTag>
@@ -65,7 +69,7 @@ class SingleItem extends Component {
                   <button>Add to cart ➕</button>
                   <DeleteItem id={item.id}>Delete Item 🗑</DeleteItem>
                 </div>
-              </ItemStyles>
+                </div>
             </ContainerStyles>
           );
         }}
