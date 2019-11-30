@@ -1,15 +1,17 @@
 import styled from 'styled-components';
 
 const Item = styled.div`
-  background: white;
+  background: #fff;
   border: 1px solid ${props => props.theme.offWhite};
   box-shadow: ${props => props.theme.bs};
   position: relative;
   display: flex;
   flex-direction: column;
+  border: 1px solid ${props => props.theme.danger};
+  border-radius: 6px;
   img {
     width: 100%;
-    height: 400px;
+    height: 100%;
     object-fit: cover;
   }
   p {
@@ -24,16 +26,42 @@ const Item = styled.div`
   .buttonList {
     display: grid;
     width: 100%;
-    border-top: 1px solid ${props => props.theme.lightGrey};
+    // border-top: 1px solid ${props => props.theme.lightGrey};
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     grid-gap: 1px;
-    background: ${props => props.theme.lightGrey};
+    // background: ${props => props.theme.lightGrey};
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
     & > * {
       background: white;
       border: 0;
       font-size: 1.3rem;
       padding: 1rem;
       text-align: center;
+      border-bottom-left-radius: 6px;
+      border-bottom-right-radius: 6px;
+      font-family: helvetica, arial, sans-serif;
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+  }
+  header {
+    display: grid;
+    grid-template-columns: 100px auto;
+    grid-template-rows: auto;
+    grid-gap: 20px;
+    .item-price {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    h2,
+    h3,
+    h4 {
+      margin: 0;
+      font-family: Helvetica, Arial, sans-serif;
+      font-weight: 100;
+      line-height: 1.2;
     }
   }
 `;

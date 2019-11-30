@@ -23,12 +23,14 @@ const ContentContainer = styled.div`
 
 const ItemsList = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 60px;
-  max-width: 960px;
+  grid-template-columns: 615px;
+  grid-gap: 60px 0;
+  /* max-width: 960px; */
   margin: 0 auto;
 `
 export default class Items extends Component {
+
+  // TODO: redesign list view. Instagram iPad List View
   render () {
     return (
       <ContentContainer className="content-container">
@@ -43,9 +45,12 @@ export default class Items extends Component {
               return `Error: ${error.message}`
             } else {
               return (
-                <ItemsList>
-                  {data.items.map(item => <Item key={item.id} item={item}/>)}
-                </ItemsList>
+                <div className="layout__main-with-sidebar">
+                  <ItemsList>
+                    {data.items.map(item => <Item key={item.id} item={item}/>).reverse()}
+                  </ItemsList>
+                  <div className="sidebar"></div>
+                </div>
               )
             }
           }}
