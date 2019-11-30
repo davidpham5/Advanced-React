@@ -21,13 +21,15 @@ export default class Item extends Component {
     return (
       <ItemStyles>
         <header>
-          <div className="item-price">avatar</div>
+          <div className="item-price">
+            <PriceTag>{formatMoney(item.price)}</PriceTag>
+          </div>
           <div>
             <div>
-              <h2>Name</h2>
+              <h2></h2>
             </div>
             <div>
-              <h3>location</h3>
+              <h3></h3>
             </div>
           </div>
         </header>
@@ -37,7 +39,7 @@ export default class Item extends Component {
             <a>{item.title}</a>
           </Link>
         </Title>
-        <PriceTag>{formatMoney(item.price)}</PriceTag>
+        
         <p>{item.description}</p>
         <div className="buttonList">
           <Link href={{ pathname: "update", query: { id: item.id } }}>
