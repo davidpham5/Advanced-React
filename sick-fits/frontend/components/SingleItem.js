@@ -24,6 +24,25 @@ const SidebarStyles = styled.div`
     text-align: left;
   }
 `;
+
+const ButtonList = styled.div`
+  display: grid;
+  width: 100%;
+  border: 1px solid ${props => props.theme.lightGrey};
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-gap: 1px;
+  background: ${props => props.theme.lightGrey};
+  & > * {
+    background: white;
+    border: 0;
+    font-size: 1.3rem;
+    padding: 1rem;
+    text-align: center;
+    font-family: helvetica, arial, sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    }
+`
 const SINGLE_ITEM_QUERY = gql`
   query SINGLE_ITEM_QUERY($id: ID!) {
     item(where: { id: $id }) {
@@ -66,15 +85,15 @@ class SingleItem extends Component {
                 <Title className="title">
                   <a href="">{item.title}</a>
                 </Title>
-                <PriceTag>{formatMoney(item.price)}</PriceTag>
+                <p><PriceTag>{formatMoney(item.price)}</PriceTag></p>
                 <p>{item.description}</p>
-                <div className="buttonList">
+                <ButtonList>
                   <Link href={{ pathname: "update", query: { id: item.id } }}>
                     <a>Edit ✏️</a>
                   </Link>
                   <button>Add to cart ➕</button>
                   <DeleteItem id={item.id}>Delete Item 🗑</DeleteItem>
-                </div>
+                </ButtonList>
               </SidebarStyles>
             </ContainerStyles>
           );
