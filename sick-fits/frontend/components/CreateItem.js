@@ -30,11 +30,11 @@ const CREATE_ITEM_MUTATION = gql`
 
 class CreateItem extends Component {
   state = {
-    title: "Blue Wave mug",
-    description: "2020 victory mug",
+    title: "",
+    description: "",
     image: "",
     largeImage: "",
-    price: formatMoney(900)
+    price: 0
   };
 
   handleChange = e => {
@@ -143,7 +143,7 @@ class CreateItem extends Component {
           </fieldset>
         </Form>
         )}
-        
+
       </Mutation>
     );
   }

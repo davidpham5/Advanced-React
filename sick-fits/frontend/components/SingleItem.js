@@ -9,15 +9,21 @@ import PriceTag from "./styles/PriceTag";
 import formatMoney from "../lib/formatMoney.js";
 import DeleteItem from "./DeleteItem";
 import styled from "styled-components";
-import Head from 'next/head';
+import Head from "next/head";
 
 const ContainerStyles = styled.div`
- display: grid;
-grid-template-columns: 600px 1fr;
-grid-gap: 30px;
-max-width: 1080px;
+  display: grid;
+  grid-template-columns: 600px 1fr;
+  grid-gap: 30px;
+  max-width: 1080px;
 `;
 
+const SidebarStyles = styled.div`
+  margin-top: 30px;
+  .title {
+    text-align: left;
+  }
+`;
 const SINGLE_ITEM_QUERY = gql`
   query SINGLE_ITEM_QUERY($id: ID!) {
     item(where: { id: $id }) {
@@ -55,9 +61,9 @@ class SingleItem extends Component {
                   <img src={item.largeImage} alt={item.title} />
                 )}
               </ItemStyles>
-              
-              <div>
-              <Title>
+
+              <SidebarStyles>
+                <Title className="title">
                   <a href="">{item.title}</a>
                 </Title>
                 <PriceTag>{formatMoney(item.price)}</PriceTag>
@@ -69,7 +75,7 @@ class SingleItem extends Component {
                   <button>Add to cart ➕</button>
                   <DeleteItem id={item.id}>Delete Item 🗑</DeleteItem>
                 </div>
-                </div>
+              </SidebarStyles>
             </ContainerStyles>
           );
         }}

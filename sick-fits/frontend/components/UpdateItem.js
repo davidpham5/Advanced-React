@@ -3,7 +3,7 @@ import { Mutation, Query } from "react-apollo";
 import gql from "graphql-tag";
 import Form from "./styles/Form";
 import Error from "./ErrorMessage";
-
+import Router from 'next/router';
 
 const SINGLE_ITEM_QUERY = gql`
   query SINGLE_ITEM_QUERY($id: ID!) {
@@ -54,6 +54,12 @@ class UpdateItem extends Component {
     });
 
     this.setState({ msg: "Updated!" });
+
+    // go to detail view for item created
+    Router.push({
+      pathname: '/item/',
+      query: { id: this.props.id }
+    })
   };
 
   render() {
