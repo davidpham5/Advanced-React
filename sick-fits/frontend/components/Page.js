@@ -29,7 +29,7 @@ const ContainerStyles = styled.div`
   padding: 2rem;
   .layout__main-with-sidebar {
     display: grid;
-    grid-template-columns: 800px 1fr;
+    grid-template-columns: 600px 1fr;
     grid-gap: 25px;
   }
 `;
