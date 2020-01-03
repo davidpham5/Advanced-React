@@ -15,13 +15,16 @@ const ContainerStyles = styled.div`
   display: grid;
   grid-template-columns: 600px 1fr;
   grid-gap: 30px;
-  max-width: 1080px;
+  max-width: 1200px;
 `;
 
 const SidebarStyles = styled.div`
   margin-top: 30px;
   .title {
     text-align: left;
+    a {
+      font-size: 32px;
+    }
   }
 `;
 
