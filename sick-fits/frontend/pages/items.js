@@ -35,12 +35,12 @@ export default class Items extends Component {
 
   // TODO: redesign list view. Instagram iPad List View
   render () {
-    const { page } = this.props.query;
+    const { page } = this.props;
     return (
       <ContentContainer className="content-container">
         <Pagination page={page} />
 
-        <Query query={ALL_ITEMS_QUERY} variables={{ skip: 0, first: 0 }}>
+        <Query query={ALL_ITEMS_QUERY} variables={{ skip: 0, first: 5 }}>
           {({ data, error, loading }) => {
             if (loading) {
               return (

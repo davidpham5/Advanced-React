@@ -8,5 +8,8 @@
       "javascript": "javascriptreact"
     }
   },
-  "standard.semistandard": true
+  "standard.semistandard": true,
+  "cSpell.words": [
+    "pham"
+  ]
 }
