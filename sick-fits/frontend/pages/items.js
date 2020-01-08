@@ -25,9 +25,9 @@ const ContentContainer = styled.div`
 `
 
 const ItemsList = styled.div`
-  /* display: grid;
-  grid-template-columns: 615px;
-  grid-gap: 60px 0; */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 30px;
   /* max-width: 960px; */
   margin: 0 auto;
 `
@@ -40,7 +40,7 @@ export default class Items extends Component {
       <ContentContainer className="content-container">
         <Pagination page={page} />
 
-        <Query query={ALL_ITEMS_QUERY} variables={{ skip: 0, first: 9 }}>
+        <Query query={ALL_ITEMS_QUERY} variables={{ skip: page * perPage - perPage }}>
           {({ data, error, loading }) => {
             if (loading) {
               return (

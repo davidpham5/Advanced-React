@@ -9,10 +9,12 @@ const Item = styled.div`
   flex-direction: column;
   border: 1px solid ${props => props.theme.lightGrey};
   border-radius: 6px;
+  max-width: 475px;
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    max-height: 475px;
   }
   p {
     font-size: 12px;
