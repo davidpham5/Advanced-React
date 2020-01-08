@@ -40,7 +40,7 @@ export default class Items extends Component {
       <ContentContainer className="content-container">
         <Pagination page={page} />
 
-        <Query query={ALL_ITEMS_QUERY} variables={{ skip: 0, first: 5 }}>
+        <Query query={ALL_ITEMS_QUERY} variables={{ skip: 0, first: 9 }}>
           {({ data, error, loading }) => {
             if (loading) {
               return (
