@@ -1,10 +1,13 @@
 {
   "workbench.colorCustomizations": {
+    "terminal.foreground": "#67E773",
+    "terminal.background": "#0A2539",
     "titleBar.activeBackground": "#2a51bec4",
-    "titleBar.inactiveBackground": "#142677",
-    "terminal.foreground" : "#67E773",
-    "terminal.background" : "#0A2539"
+    "titleBar.inactiveBackground": "#2a51be99",
+    "titleBar.activeForeground": "#e7e7e7",
+    "titleBar.inactiveForeground": "#e7e7e799",
   },
   "standard.semistandard": true,
+  "peacock.color": "#2a51bec4",
 
 }
