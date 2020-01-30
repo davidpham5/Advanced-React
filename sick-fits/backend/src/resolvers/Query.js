@@ -6,12 +6,18 @@ const Query = {
   items: forwardTo('db'),
   item: forwardTo('db'),
   itemsConnection: forwardTo('db'),
-  // async items(parent, args, ctx, info) {
-  //   console.log('getting items');
-  //   const item = await ctx.db.query.items();
-  //   return item;
-  // }
-  users: forwardTo('db')
+  users: forwardTo('db'),
+  me (parent, args, ctx, info) {
+    // check if there is a current user id
+    // access user? ctx
+    if (!ctx.request.userId) {
+       return null;
+    }
+    return ctx.db.query.user({
+      where: {id: ctx.request.userId}
+    }, info ); // info is the acutal query from the client side.
+  }
 };
 
 module.exports = Query;
+

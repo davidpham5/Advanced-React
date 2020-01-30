@@ -13,4 +13,5 @@ type Query {
   item(where: ItemWhereUniqueInput!): Item
   users: [User]!
   itemsConnection(where: ItemWhereInput): ItemConnection!
+  me: User
 }
